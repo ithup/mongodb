@@ -1,0 +1,37 @@
+MongDB学习笔记：
+	mongodb服务的启动：mongod -f D:\javaee\MongoDB\mongodb.conf
+	mongodb数据库的启动：mongo --port=27001
+	1.简单查询
+		db.集合名称.find()
+	2.带条件查询
+		db.infos.find({"url":"www.mldn.cn"},{"_id":0});
+	3.数据查询
+		db.students.insert({"name":"周三","sex":"男","age":18,"score":89,"address":"海定区"});
+		db.students.insert({"name":"张三","sex":"男","age":20,"score":99,"address":"朝阳区"});
+		db.students.insert({"name":"丽莎","sex":"女","age":22,"score":59,"address":"东城区"});
+		db.students.insert({"name":"娜娜","sex":"女","age":28,"score":79,"address":"西城区"});
+		db.students.insert({"name":"赵强","sex":"男","age":16,"score":50,"address":"海定区"});
+		db.students.insert({"name":"王伟","sex":"男","age":28,"score":100,"address":"朝阳区"});
+	4.查询姓名是周三的学生
+		db.students.find({"name":"周三"}).pretty();
+	5.查询性别男的学生
+		db.students.find({"sex":"男"}).pretty();
+	6.查询年龄大于19的学生
+		db.students.find({"age":{"$gt":19}}).pretty();
+	7.查询成绩大于60分的学生
+		db.students.find({"score":{"$gte":60}},{"_id":0,"age":0,"sex":0}).pretty();
+	8.查询姓名不是王五的信息
+		db.students.find({"name":{"$ne":"王五"}}).pretty();
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
